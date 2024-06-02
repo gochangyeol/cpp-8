@@ -19,7 +19,14 @@ private:
 
 public:
   // 메시지를 전송한다
-  void send(std::string message);
+  void send(std::string message){
+    Packet *packet=new Packet(host_->address(), destAddress_, port_, destPort_, message);
+    host_->send(packet);
+  }
+  void received(Packet *packet){
+
+    std::cout<<"MessageService: received \""<<packet->dataString()<<"\" from "<<packet->srcAddress().toString()<<":"<<packet->destPort();
+  }
 };
 
 #endif
