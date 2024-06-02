@@ -20,10 +20,8 @@ int main() {
   // 서비스를 설치한다
   EchoServiceInstaller echoServiceInstaller(ECHO_PORT);
   echoServiceInstaller.install(echoServer);
-  MessageServiceInstaller messageServiceInstaller(echoServer->address(),
-                                                  ECHO_PORT);
-  MessageService *messageService =
-      messageServiceInstaller.install(messageClient);
+  MessageServiceInstaller messageServiceInstaller(echoServer->address(), ECHO_PORT);
+  MessageService *messageService = messageServiceInstaller.install(messageClient);
 
   // 라우터를 생성한다.
   std::vector<ManualRouter *> routers;

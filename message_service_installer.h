@@ -17,7 +17,11 @@ public:
       : destAddress_(destAddress), destPort_(destPort) {}
 
   // 호스트에 MessageService를 설치한다
-  MessageService *install(Host *host);
+  MessageService *install(Host *host){
+    MessageService* service=new MessageService(host, destPort_, destAddress_, destPort_);
+    host->addService(service);
+    return service;
+  }
 };
 
 #endif

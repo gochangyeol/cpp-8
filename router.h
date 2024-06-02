@@ -6,6 +6,7 @@
 
 struct RoutingEntry {
 public:
+ RoutingEntry(const Address& dest, Link *link) : destination(dest), nextLink(link) {}
   Address destination;
   Link *nextLink;
 };

@@ -15,8 +15,7 @@ private:
   Address destAddress_;
   // 목적지 포트
   short destPort_;
-  MessageService(Host *host, short port, Address destAddress, short destPort)
-      : Service(host, port), destAddress_(destAddress), destPort_(destPort) {}
+  MessageService(Host *host, short port, Address destAddress, short destPort)  : Service(host, port), destAddress_(destAddress), destPort_(destPort) {}
 
 public:
   // 메시지를 전송한다
